@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DesembargoDerechoTransito" pageWidth="612" pageHeight="950" whenNoDataType="AllSectionsNoDetail" columnWidth="482" leftMargin="70" rightMargin="60" topMargin="40" bottomMargin="40" isIgnorePagination="true" uuid="c75f449a-afef-4e5a-bdd9-448947301df2">
+	<property name="ireport.zoom" value="1.6105100000000014"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="96"/>
+	<parameter name="bancos" class="java.util.List"/>
+	<parameter name="nombrePersona" class="java.lang.String"/>
+	<parameter name="consecutivo" class="java.lang.String"/>
+	<parameter name="numeroExpediente" class="java.lang.String"/>
+	<parameter name="fechaExpediente" class="java.lang.String"/>
+	<parameter name="tipoDocumento" class="java.lang.String"/>
+	<parameter name="numeroDocumento" class="java.lang.String"/>
+	<parameter name="nombreFuncionarioEncargado" class="java.lang.String"/>
+	<parameter name="cargoFuncionarioEncargado" class="java.lang.String"/>
+	<parameter name="Logo1" class="java.lang.String"/>
+	<parameter name="Logo2" class="java.lang.String"/>
+	<parameter name="Logo3" class="java.lang.String"/>
+	<field name="bancos" class="java.util.List"/>
+	<field name="nombrePersona" class="java.lang.String"/>
+	<field name="consecutivo" class="java.lang.String"/>
+	<field name="numeroExpediente" class="java.lang.String"/>
+	<field name="fechaExpediente" class="java.lang.String"/>
+	<field name="tipoDocumento" class="java.lang.String"/>
+	<field name="numeroDocumento" class="java.lang.String"/>
+	<field name="Logo1" class="java.lang.String"/>
+	<field name="Logo2" class="java.lang.String"/>
+	<field name="Logo3" class="java.lang.String"/>
+	<field name="nombreFuncionarioEncargado" class="java.lang.String"/>
+	<field name="cargoFuncionarioEncargado" class="java.lang.String"/>
+	<field name="expediente" class="java.lang.String"/>
+	<field name="placa" class="java.lang.String"/>
+	<title>
+		<band height="870" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="138" width="482" height="35" uuid="d43981d1-4158-4f87-a1b1-bc540ac4bf04"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Señores:"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="173" width="482" height="21" isPrintWhenDetailOverflows="true" uuid="8327e311-8f41-4945-9ced-3a2777668604"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bancos}.toString().substring(1, $F{bancos}.toString().length()-1) + ", "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="219" width="482" height="62" isPrintWhenDetailOverflows="true" uuid="410c82a1-7b2f-4bd3-8163-982119c509f7"/>
+				<textElement textAlignment="Justified" verticalAlignment="Top">
+					<font size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cartagena" + "\n" + "\n" +
+"Desembargo decretado dentro del proceso coactivo adelantado contra: " +$F{nombrePersona}+ "\n" + "\n" +
+"Radicado " +$F{expediente} + "\n" +
+"Placa " + $F{placa} + "\n" +
+"Oficio: " + $F{consecutivo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="110" y="24" width="255" height="34" uuid="3a6b5e60-4f73-4fda-b9cd-0d4549638f0d"/>
+				<textElement textAlignment="Center">
+					<font size="9" isBold="true" isItalic="false" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO ADMINISTRATIVO DE TRANSITO Y TRANSPORTE DE CARTAGENA - DATT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="95" width="145" height="20" uuid="f86e4ef2-e197-4345-8864-cf0706eb6e39"/>
+				<text><![CDATA[Cartagena de Indias D.T. & C.]]></text>
+			</staticText>
+			<textField pattern="MMMMM dd, yyyy">
+				<reportElement x="149" y="95" width="100" height="20" uuid="1a7b59e0-a98d-473a-b2b8-a690a5e1f6da"/>
+				<textFieldExpression><![CDATA[(new java.text.SimpleDateFormat("MMMMM dd yyyy",new Locale("es", "ES"))).format(new Date())]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="414" width="482" height="20" isPrintWhenDetailOverflows="true" uuid="65b6e5f7-478f-417f-9867-1098d7b96f8f"/>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cordialmente,"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="545" width="482" height="38" isPrintWhenDetailOverflows="true" uuid="2e3e6d94-189d-45a7-9b5c-cf5695a70f4c"/>
+				<textElement textAlignment="Justified">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["De conformidad con el decreto 2150 de 1995, la firma mecánica" + "\n"+
+"que antecede tiene plena validez para todos los efectos legales."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="840" width="482" height="30" isRemoveLineWhenBlank="true" uuid="118ab819-ae1d-49ff-a328-59453a3b2142"/>
+				<textElement textAlignment="Center">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dirección de las Oficinas del DEPARTAMENTO ADMINISTRATIVO DE TRANSITO Y TRANSPORTE (DATT):" +"\n"+"\n"+
+
+"Avenida Santander No. 46-B, Edificio Mar del Norte, Cartagena"]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="281" width="482" height="57" isPrintWhenDetailOverflows="true" uuid="38762424-0461-4b8b-a33d-7a4173ace59f"/>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\n" + "\n" + "Me permito informar a usted que, dentro del proceso de cobro coactivo indicado en la referencia, se ha ordenado el desembargo y levantamiento de medidas cautelaries decretadas contra el señor/a " +$F{nombrePersona}+
+" identificado con " + $F{tipoDocumento} + " Número " + $F{numeroDocumento} + "."]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="338" width="482" height="76" isPrintWhenDetailOverflows="true" uuid="1e1b67dd-f480-4616-a73a-b0ea10a02950"/>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["\n" + "A las cuentas de ahorro y/o corrientes, CDT, CDAT, acciones, depósitos fiduciarios y levantamiento de embargos que llegaren a reposar sobre los rodantes de propiedad, posesión o tenencia del deudor.\n"
++ "\n"
++ "Para verificar o confirmar la validez del certificado enviar correo a: coordinadorcoactivo@transitocartagena.gov.co."]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement x="4" y="4" width="60" height="54" uuid="5f1e0862-e2b3-4bc2-b128-dba03e2a810e"/>
+				<imageExpression><![CDATA[$F{Logo1}]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="404" y="4" width="59" height="54" uuid="d711bd44-2298-46ab-a849-d897ac29fec5"/>
+				<imageExpression><![CDATA[$F{Logo2}]]></imageExpression>
+			</image>
+			<image vAlign="Bottom">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="462" width="112" height="67" isPrintWhenDetailOverflows="true" uuid="da98701f-2faf-4642-a225-135cc044febb"/>
+				<imageExpression><![CDATA[$F{Logo3}]]></imageExpression>
+			</image>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="194" width="482" height="25" isPrintWhenDetailOverflows="true" uuid="a5bfb9d1-8371-4947-a1d4-63d395a97033"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["GERENTE"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+</jasperReport>

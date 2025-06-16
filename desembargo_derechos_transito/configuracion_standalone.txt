@@ -1,0 +1,6 @@
+//Antes de cerrar el </system-properties> en standalone-full-C2.xml agregar:
+<property name="configuration.parametros.plantillas.DESEMBARGO_DERECHOS_TRANSITO.numeroImagenes" value="3"/>
+<property name="configuration.parametros.plantillas.DESEMBARGO_DERECHOS_TRANSITO.fuente" value="desembargoDerechosTransito.jrxml"/>
+<property name="configuration.parametros.plantillas.DESEMBARGO_DERECHOS_TRANSITO.compilado" value="desembargoDerechosTransito.jasper"/>
+<property name="configuration.parametros.plantillas.DESEMBARGO_DERECHOS_TRANSITO.formatoImagen" value="jpg"/>
+<property name="configuration.parametros.plantillas.DESEMBARGO_DERECHOS_TRANSITO.formatos" value="pdf"/>
